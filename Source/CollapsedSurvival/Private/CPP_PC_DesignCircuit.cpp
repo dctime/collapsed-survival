@@ -37,7 +37,8 @@ void ACPP_PC_DesignCircuit::PreviewComponentOnTheBoard(UClass* ComponentClass, U
 
 		if (PreviewedActor == nullptr)
 		{
-			PreviewedActor = World->SpawnActor<AActor>(ComponentClass, HitLocation, FRotator(0, 0, 0));
+			FRotator Rotator = FRotator(0, Rotation, 0);
+			PreviewedActor = World->SpawnActor<AActor>(ComponentClass, HitLocation, Rotator);
 			TArray<AActor*> Overlapping;
 			PreviewedActor->GetOverlappingActors(Overlapping);
 			if (Overlapping.Num() > 0)
@@ -48,4 +49,17 @@ void ACPP_PC_DesignCircuit::PreviewComponentOnTheBoard(UClass* ComponentClass, U
 		}
 	}
 
+}
+
+void ACPP_PC_DesignCircuit::RotatePreviewQuarter()
+{
+	Rotation += 90;
+
+	if (Rotation >= 360)
+	{
+		Rotation = 0;
+	}
+
+	PreviewedActor->Destroy();
+	PreviewedActor = nullptr;
 }

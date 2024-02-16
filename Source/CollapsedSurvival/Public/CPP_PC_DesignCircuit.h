@@ -16,6 +16,9 @@ class COLLAPSEDSURVIVAL_API ACPP_PC_DesignCircuit : public APlayerController
 {
 	GENERATED_BODY()
 
+private:
+	float Rotation = 0.0;
+
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	AActor* PreviewedActor;
@@ -23,8 +26,11 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float TraceLength = 10000.0;
 
+
 public:
 	UFUNCTION(BlueprintCallable)
 	void PreviewComponentOnTheBoard(UClass* ComponentClass, UClass* BoardClass);
+	UFUNCTION(BlueprintCallable)
+	void RotatePreviewQuarter();
 	
 };
