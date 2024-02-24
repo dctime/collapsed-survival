@@ -3,6 +3,7 @@
 
 #include "CPP_VectorFunctions.h"
 
+
 float UCPP_VectorFunctions::GetAngleBetweenTwoVector(UClass* Class, FVector VectorStd, FVector VectorMeasure)
 {
 	float U1, U2, V1, V2;
@@ -35,3 +36,20 @@ float UCPP_VectorFunctions::GetAngleBetweenTwoVector(UClass* Class, FVector Vect
 
 	return Angle;
 }
+
+FVector UCPP_VectorFunctions::GetHundredFloorXY(FVector InputVector)
+{
+	int X = static_cast<int>(InputVector.X/100)*100;
+	int Y = static_cast<int>(InputVector.Y/100)*100;
+	float Z = InputVector.Z;
+
+
+	return FVector(X, Y, Z);
+}
+
+int UCPP_VectorFunctions::IntTest()
+{
+	return 0;
+}
+
+

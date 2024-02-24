@@ -10,6 +10,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "CPP_VectorFunctions.generated.h"
 
+
 /**
  * 
  */
@@ -20,4 +21,8 @@ class COLLAPSEDSURVIVAL_API UCPP_VectorFunctions : public UObject
 public:
 	UFUNCTION(BlueprintCallable)
 	static float GetAngleBetweenTwoVector(UClass* Class, FVector VectorStd, FVector VectorMeasure);
+
+	static FVector GetHundredFloorXY(FVector InputVector);
+
+	static int IntTest();
 };

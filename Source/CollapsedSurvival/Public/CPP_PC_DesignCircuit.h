@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "CPP_VectorFunctions.h"
 #include "CPP_PC_DesignCircuit.generated.h"
 
 /**

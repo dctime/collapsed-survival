@@ -23,8 +23,9 @@ void ACPP_PC_DesignCircuit::PreviewComponentOnTheBoard(UClass* ComponentClass, U
 
 	AActor* HitActor = TraceResult.GetActor();
 	FVector HitLocation = TraceResult.ImpactPoint;
+	FVector PlaceLocation = UCPP_VectorFunctions::GetHundredFloorXY(HitLocation);
 
-	if (IsValid(PreviewedActor) && PreviewedActor->GetActorLocation() != HitLocation)
+	if (IsValid(PreviewedActor) && UCPP_VectorFunctions::GetHundredFloorXY(PreviewedActor->GetActorLocation()) != PlaceLocation)
 	{
 		PreviewedActor->Destroy();
 		PreviewedActor = nullptr;
@@ -38,7 +39,7 @@ void ACPP_PC_DesignCircuit::PreviewComponentOnTheBoard(UClass* ComponentClass, U
 		if (PreviewedActor == nullptr)
 		{
 			FRotator Rotator = FRotator(0, Rotation, 0);
-			PreviewedActor = World->SpawnActor<AActor>(ComponentClass, HitLocation, Rotator);
+			PreviewedActor = World->SpawnActor<AActor>(ComponentClass, PlaceLocation, Rotator);
 			TArray<AActor*> Overlapping;
 			PreviewedActor->GetOverlappingActors(Overlapping);
 			if (Overlapping.Num() > 0)
