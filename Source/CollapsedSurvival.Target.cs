@@ -9,7 +9,8 @@ public class CollapsedSurvivalTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
-
-		ExtraModuleNames.AddRange( new string[] { "CollapsedSurvival" } );
-	}
+		ExtraModuleNames.Add("CollapsedSurvival");
+        ExtraModuleNames.Add("CircuitSim");
+        ExtraModuleNames.Add("DesignLuminaCircuit");
+    }
 }

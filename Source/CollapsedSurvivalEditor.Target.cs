@@ -10,6 +10,8 @@ public class CollapsedSurvivalEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 
-		ExtraModuleNames.AddRange( new string[] { "CollapsedSurvival" } );
-	}
+        ExtraModuleNames.Add("CollapsedSurvival");
+        ExtraModuleNames.Add("CircuitSim");
+        ExtraModuleNames.Add("DesignLuminaCircuit");
+    }
 }
