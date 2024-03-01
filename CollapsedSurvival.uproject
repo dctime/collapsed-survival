@@ -12,6 +12,19 @@
 				"Engine",
 				"CoreUObject"
 			]
+		},
+		{
+			"Name": "CircuitSim",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "DesignLuminaCircuit",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [
