@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Kismet/KismetSystemLibrary.h"
 #include "CPP_PC_DesignLuminaCircuit.generated.h"
 /**
  * 
@@ -16,4 +17,7 @@ class DESIGNLUMINACIRCUIT_API ACPP_PC_DesignLuminaCircuit : public APlayerContro
 public:
 	UFUNCTION(BlueprintCallable)
 	void Move(float UpPositiveValue = 0, float RightPositiveValue = 0, float Speed = 1);
+
+	UFUNCTION(BlueprintCallable)
+	void PlaceComponent(float DetectionRange);
 };
